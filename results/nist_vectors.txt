@@ -1,0 +1,69 @@
+Known-answer validation against the NIST SP 800-90B reference vectors
+reference values are the output of NIST ea_non_iid on the same vectors, tests/nist_vectors/*.res
+
+rand1_short (binary)
+                        quantity   this package           NIST   |difference|
+                      H_original   0.6117162048   0.6117162048       1.11e-16
+                        assessed   0.6117162048   0.6117162048       1.11e-16
+               literal:collision   0.6914641210   0.6914641210       4.77e-15
+             literal:compression   0.6117162048   0.6117162048       1.11e-16
+                     literal:lag   0.9433337066   0.9433337066       0.00e+00
+                     literal:lrs   0.9626258038   0.9626258038       0.00e+00
+                   literal:lz78y   0.9614462460   0.9614462460       0.00e+00
+                  literal:markov   0.9875961045   0.9875961045       1.11e-15
+       literal:most_common_value   0.9610588257   0.9610588257       1.11e-16
+                literal:multimcw   0.9526180605   0.9526180605       0.00e+00
+                literal:multimmc   0.9616166678   0.9616166678       1.11e-16
+                 literal:t_tuple   0.8676244308   0.8676244308       1.11e-16
+  worst deviation 4.77e-15
+
+rand4_short (multi-bit, alphabet 16)
+                        quantity   this package           NIST   |difference|
+                     H_bitstring   0.8038720670   0.8038720670       0.00e+00
+                      H_original   3.5674726724   3.5674726724       0.00e+00
+                        assessed   3.2154882679   3.2154882679       0.00e+00
+             bitstring:collision   0.8981794484   0.8981794484       2.33e-15
+           bitstring:compression   0.8038720670   0.8038720670       0.00e+00
+                   bitstring:lag   0.9826418217   0.9826418217       0.00e+00
+                   bitstring:lrs   0.9329693145   0.9329693145       1.11e-16
+                 bitstring:lz78y   0.9801451734   0.9801451734       0.00e+00
+                bitstring:markov   0.9906168078   0.9906168078       5.55e-16
+     bitstring:most_common_value   0.9791894830   0.9791894830       1.11e-16
+              bitstring:multimcw   0.9865608646   0.9865608646       1.11e-16
+              bitstring:multimmc   0.9776965121   0.9776965121       0.00e+00
+               bitstring:t_tuple   0.8987772294   0.8987772294       0.00e+00
+                     literal:lag   3.7836506126   3.7836506126       0.00e+00
+                     literal:lrs   3.8335255222   3.8335255222       0.00e+00
+                   literal:lz78y   3.8824956641   3.8824956641       0.00e+00
+       literal:most_common_value   3.7900373902   3.7900373902       0.00e+00
+                literal:multimcw   3.8669546825   3.8669546825       0.00e+00
+                literal:multimmc   3.8846552795   3.8846552795       0.00e+00
+                 literal:t_tuple   3.5674726724   3.5674726724       0.00e+00
+  worst deviation 2.33e-15
+
+rand8_short (multi-bit, alphabet 256)
+                        quantity   this package           NIST   |difference|
+                     H_bitstring   0.7326117181   0.7326117181       0.00e+00
+                      H_original   6.6364412871   6.6364412871       2.27e-11
+                        assessed   5.8608937445   5.8608937445       0.00e+00
+             bitstring:collision   0.8320529822   0.8320529822       7.77e-16
+           bitstring:compression   0.7326117181   0.7326117181       0.00e+00
+                   bitstring:lag   0.9896934939   0.9896934939       1.11e-16
+                   bitstring:lrs   0.9819303577   0.9819303577       0.00e+00
+                 bitstring:lz78y   0.9880818038   0.9880818038       1.11e-16
+                bitstring:markov   0.9977249767   0.9977249767       1.33e-15
+     bitstring:most_common_value   0.9833867847   0.9833867847       1.11e-16
+              bitstring:multimcw   0.9945371155   0.9945371155       0.00e+00
+              bitstring:multimmc   0.9878145440   0.9878145440       1.11e-16
+               bitstring:t_tuple   0.9107864457   0.9107864457       1.11e-16
+                     literal:lag   6.6364412871   6.6364412871       2.27e-11
+                     literal:lrs   7.2891986717   7.2891986717       0.00e+00
+                   literal:lz78y   7.3533553938   7.3533553938       0.00e+00
+       literal:most_common_value   7.0104540377   7.0104540377       0.00e+00
+                literal:multimcw   7.3751922497   7.3751922497       0.00e+00
+                literal:multimmc   7.3276276792   7.3276276792       0.00e+00
+                 literal:t_tuple   7.0104540377   7.0104540377       0.00e+00
+  worst deviation 2.27e-11
+
+worst deviation over the three vectors 2.27e-11
+predictor counts C, r and N equal to the reference on 20 blocks: True

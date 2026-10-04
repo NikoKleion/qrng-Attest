@@ -1,0 +1,61 @@
+{
+ "job_id": "db0rsb3id5ic73eq8em0",
+ "backend": "ibm_fez",
+ "qubits": [
+  6,
+  124,
+  144,
+  50
+ ],
+ "shots": 20000,
+ "labels": [
+  "prep0",
+  "prep1",
+  "z",
+  "x",
+  "y"
+ ],
+ "submitted_utc": "2026-10-04T02:47:08Z",
+ "plan": "open",
+ "pricing_type": "free",
+ "estimate_s": 25.16888,
+ "cap_s": 90,
+ "calibration_at_submission": {
+  "6": {
+   "t1": 0.00016384001235687255,
+   "t2": 0.00012768476317957496,
+   "readout_error": 0.002197265625,
+   "measure_duration": 1.66e-06,
+   "sx_error": 0.00031048226200844863
+  },
+  "124": {
+   "t1": 0.0001160478976321521,
+   "t2": 0.00013194044173799705,
+   "readout_error": 0.00244140625,
+   "measure_duration": 1.66e-06,
+   "sx_error": 0.00038444930138333206
+  },
+  "144": {
+   "t1": 6.371862038713598e-05,
+   "t2": 8.078725072328118e-05,
+   "readout_error": 0.0029296875,
+   "measure_duration": 1.66e-06,
+   "sx_error": 0.00029324399479781666
+  },
+  "50": {
+   "t1": 0.00018516235741749968,
+   "t2": 0.00012741026902147835,
+   "readout_error": 0.003173828125,
+   "measure_duration": 1.66e-06,
+   "sx_error": 0.0002596493031885184
+  }
+ },
+ "qiskit_version": "2.3.1",
+ "qiskit_ibm_runtime_version": "0.46.1",
+ "usage": {
+  "quantum_seconds": 28,
+  "seconds": 28,
+  "status": "complete"
+ },
+ "finished_utc": "2026-10-04T02:53:40Z"
+}

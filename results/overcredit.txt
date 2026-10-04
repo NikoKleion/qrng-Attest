@@ -1,0 +1,84 @@
+Over-credit experiment: black-box SP 800-90B vs calibration attestation
+  source: P(0) = 0.980, true min-entropy 0.0291 bits/bit; 60000 shots per point; symmetric readout fidelity F
+
+  F       p0_obs   IID   800-90B credit   attested   over-credit
+  --------------------------------------------------------------
+  0.550    0.546   yes           0.8580     0.0000       +0.8289
+  0.650    0.641   yes           0.6293     0.0170       +0.6002
+  0.750    0.740   yes           0.4247     0.0145       +0.3956
+  0.850    0.837   yes           0.2498     0.0187       +0.2207
+  0.950    0.932   yes           0.0974     0.0247       +0.0682
+  0.999    0.979   yes           0.0282     0.0268       -0.0010
+
+  the observed stream is exactly Bernoulli-IID at every point: it passes the IID screen and no
+  output-only statistical test can distinguish it from a genuine source of the same bias.
+  the black-box track credits up to 0.858 bits/bit against a true source
+  entropy of 0.0291 (over-credit 0.829 bits/bit at F = 0.550);
+  the attested bound stays at or below the truth at every point.
+  detector noise is characterized classical noise and is not credited as quantum source entropy.
+
+Crosstalk over-credit experiment: per-stream SP 800-90B vs the joint rate
+  qubit B copies qubit A with probability c; both marginals are uniform-IID; 60000 shots per point
+
+  c       truth rate   per-stream credit   1-MI debit   joint bound
+  --------------------------------------------------------------
+  0.05        0.9648              0.9826       0.9980        0.9486  <-- 1-MI over-credits
+  0.20        0.8685              0.8403       0.9703        0.8456  <-- 1-MI over-credits
+  0.35        0.7835              0.8572       0.9091        0.7710  <-- 1-MI over-credits
+  0.50        0.7075              0.9824       0.8157        0.6988  <-- 1-MI over-credits
+  0.80        0.5760              0.9798       0.4692        0.5675
+
+  every marginal stream passes per-stream assessment at close to 1 bit/bit; the true joint
+  rate is lower at every c > 0. The 1-MI debit exceeds the truth under moderate crosstalk
+  (it is a Shannon quantity); the worst-pair joint bound stays at or below the truth
+  everywhere, so it is the debit the attestation uses.
+
+Mis-calibration sensitivity: the attested bound vs calibration error
+  actual readout fidelity 0.75, true source entropy 0.0291 bits/bit; the attestation assumes fidelity F_actual + dF
+  'boxed' propagates the calibration's own 2000-shot statistical margin (about 0.026) into the bound
+
+  dF        assumed F   point attested   boxed attested   point over-credit   boxed over-credit
+  ----------------------------------------------------------------------------------------------
+  -0.05        0.700           0.0000           0.0000             -0.0291           -0.0291
+  -0.02        0.730           0.0000           0.0000             -0.0291           -0.0291
+  +0.00        0.750           0.0209           0.0000             -0.0083           -0.0291
+  +0.02        0.770           0.0745           0.0079             +0.0454 <-- over-credits           -0.0213
+  +0.05        0.800           0.1445           0.0845             +0.1153 <-- over-credits           +0.0554 <-- over-credits
+
+  with the calibration taken as exact, the attested value exceeds the true entropy when the
+  assumed fidelity is above the real one. With the calibration's statistical margin included,
+  the bound holds for any error inside that margin. An overstatement larger than the margin
+  exceeds the true entropy in both columns.
+
+Coherence experiment: a source whose Z outcomes are uniform at every coherence
+  60000 shots in each of the Z, X and Y bases; symmetric readout fidelity 0.99, calibrated on as many shots
+
+  coherence   true min-entropy   800-90B credit   population value   coherence bound
+  -------------------------------------------------------------------------------
+      1.000             1.0000           0.9834             0.9801            0.7277
+      0.999             0.9369           0.9834             0.9801            0.7220
+      0.990             0.8096           0.9834             0.9801            0.6740
+      0.950             0.6080           0.9834             0.9801            0.5410
+      0.900             0.4781           0.9834             0.9801            0.4372
+      0.500             0.1000           0.9834             0.9801            0.0887
+      0.000             0.0000           0.9834             0.9801            0.0000
+
+  the true min-entropy is eq. 7 of Fiorentino et al., for an adversary who holds a purification.
+  the Z outcomes are the same stream at every coherence, so the SP 800-90B credit and the
+  population value do not move; the coherence bound is at or below the truth at every point.
+
+Shots taken together: bits per shot certified at smoothing 2^-65, for a known coherence and no bias
+
+  coherence   one shot   n = 20000       n = 1000000     n = 100000000   long outputs
+  ----------------------------------------------------------------------------------------
+      1.000     1.0000          0.9934          0.9999          1.0000         1.0000
+      0.998     0.9116          0.9523          0.9842          0.9882         0.9886
+      0.995     0.8627          0.9287          0.9688          0.9742         0.9748
+      0.990     0.8096          0.8994          0.9472          0.9539         0.9546
+      0.950     0.6080          0.7520          0.8202          0.8302         0.8313
+      0.900     0.4781          0.6264          0.7011          0.7124         0.7136
+      0.500     0.1000          0.1287          0.1796          0.1878         0.1887
+
+  one shot is eq. 7 of Fiorentino et al.; the columns for n shots are Theorem 7 of Tomamichel, Colbeck
+  and Renner with the alpha entropy of one shot, the best alpha in (1, 2]; long outputs is the
+  conditional von Neumann entropy, which the rate approaches as n grows.

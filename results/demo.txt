@@ -1,0 +1,12 @@
+QRNG certificate: demo QRNG  [synthetic]
+  4000 shots x 3 qubits
+  attested min-entropy = 0.6858 bits/bit   (verdict: PASS)
+  classical estimate: IID track (source passed the IID checks)
+  extractable = 9422 uniform bits at epsilon = 2^-64
+    0.7852 bits/bit over these 12000 bits taken together, set by the alpha entropy at alpha = 1.229
+    long outputs: at least 0.8875 to 0.8893 bits/bit by qubit
+  a 256-bit key costs 558 raw bits
+  source coherence at least 0.970, from X and Y basis shots
+  action: no action required; re-attest after the next calibration cycle
+  advice: q0: the coherence bound sets the attested rate (0.69 bits/bit at coherence 0.970); raise the X and Y basis and calibration shot counts, or check the state preparation
+  note: synthetic quantum source: this run is simulated, not measured hardware

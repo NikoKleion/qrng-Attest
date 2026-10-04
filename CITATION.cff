@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use qrng-attest, please cite it as below."
+title: "qrng-attest"
+abstract: >-
+  Entropy assessment and device attestation for quantum random number generation on Qiskit backends: the
+  NIST SP 800-90B assessment of the raw bits, a min-entropy bound from the readout calibration and the
+  coherence of the source state measured in the X and Y bases, the output length for the shots taken
+  together, and randomness extraction.
+type: software
+authors:
+  - given-names: Nikolas
+    family-names: Klein
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/NikoKleion/qrng-attest"
+keywords:
+  - quantum random number generation
+  - min-entropy
+  - NIST SP 800-90B
+  - randomness extraction
+  - Qiskit

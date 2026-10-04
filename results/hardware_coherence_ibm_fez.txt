@@ -1,0 +1,19 @@
+job db0rsb3id5ic73eq8em0 on ibm_fez, qubits [6, 124, 144, 50], 20000 shots per circuit, plan open and free, usage {'quantum_seconds': 28, 'seconds': 28, 'status': 'complete'}
+
+  qubit      F0      F1  P(0) Z  coherence  at least  population   bound
+      6  0.9986  0.9919  0.5076     0.9982    0.9930      0.9582  0.8388
+    124  0.9997  0.9929  0.4995     0.9983    0.9956      0.9605  0.8702
+    144  0.9996  0.9958  0.5004     0.9982    0.9957      0.9681  0.8721
+     50  0.9956  0.9935  0.4947     0.9965    0.9843      0.9518  0.7653
+
+QRNG certificate: ibm_fez QRNG  [measured]
+  20000 shots x 4 qubits
+  attested min-entropy = 0.7653 bits/bit   (verdict: PASS)
+  classical estimate: IID track (source passed the IID checks)
+  extractable = 75020 uniform bits at epsilon = 2^-64
+    0.9377 bits/bit over these 80000 bits taken together, set by the alpha entropy at alpha = 1.129
+    long outputs: at least 0.9337 to 0.9778 bits/bit by qubit
+  a 256-bit key costs 500 raw bits
+  source coherence at least 0.984, from X and Y basis shots
+  action: no action required; re-attest after the next calibration cycle
+  advice: q3: the coherence bound sets the attested rate (0.77 bits/bit at coherence 0.984); raise the X and Y basis and calibration shot counts, or check the state preparation

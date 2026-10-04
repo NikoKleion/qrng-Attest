@@ -1,0 +1,64 @@
+qrng-attest
+Copyright 2026 Nikolas Klein
+
+This product includes software developed by Nikolas Klein, licensed under the
+Apache License, Version 2.0. See LICENSE.
+
+Third party material, not covered by that grant:
+
+  tests/nist_vectors/rand1_short.bin
+  tests/nist_vectors/rand1_short.res
+  tests/nist_vectors/rand4_short.bin
+  tests/nist_vectors/rand4_short.res
+  tests/nist_vectors/rand8_short.bin
+  tests/nist_vectors/rand8_short.res
+
+  Unmodified copies of test vectors and reference output from NIST's reference
+  implementation of SP 800-90B, https://github.com/usnistgov/SP800-90B_EntropyAssessment.
+  NIST-developed software is provided by NIST as a public service and, as a work of the
+  United States Government, is not subject to copyright protection in the United States
+  (17 U.S.C. 105). It is provided as is, with no warranty of any kind, express, implied
+  or statutory, and NIST assumes no responsibility whatsoever for its use. See
+  tests/nist_vectors/README.md.
+
+NIST SP 800-90B reference implementation, source code, in qrng_attest/predictors.py:
+
+  A translation into Python, made on 2026-10-03, of the four prediction estimators and the
+  prediction estimate of NIST's reference implementation of SP 800-90B, version 1.1.8,
+  https://github.com/usnistgov/SP800-90B_EntropyAssessment: cpp/non_iid/lag_test.h,
+  multi_mcw_test.h, multi_mmc_test.h, lz78y_test.h and the functions predictionEstimate,
+  calc_p_local and prediction_estimate_function and the class PostfixDictionary of
+  cpp/shared/utils.h. The translation keeps the order of operations and the tie rules of the
+  source; the dictionaries are keyed by integers and the run function is evaluated in double
+  precision. On bits the counts are also computed by array operations that return the same
+  integers. The National Institute of Standards and Technology is the source of that software,
+  which carries this notice:
+
+    NIST-developed software is provided by NIST as a public service. You may use, copy, and
+    distribute copies of the software in any medium, provided that you keep intact this
+    entire notice. You may improve, modify, and create derivative works of the software or
+    any portion of the software, and you may copy and distribute such modifications or
+    works. Modified works should carry a notice stating that you changed the software and
+    should note the date and nature of any such change. Please explicitly acknowledge the
+    National Institute of Standards and Technology as the source of the software.
+
+    NIST-developed software is expressly provided "AS IS." NIST MAKES NO WARRANTY OF ANY
+    KIND, EXPRESS, IMPLIED, IN FACT, OR ARISING BY OPERATION OF LAW, INCLUDING, WITHOUT
+    LIMITATION, THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+    NON-INFRINGEMENT, AND DATA ACCURACY. NIST NEITHER REPRESENTS NOR WARRANTS THAT THE
+    OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT ANY DEFECTS WILL
+    BE CORRECTED. NIST DOES NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OF THE
+    SOFTWARE OR THE RESULTS THEREOF, INCLUDING BUT NOT LIMITED TO THE CORRECTNESS, ACCURACY,
+    RELIABILITY, OR USEFULNESS OF THE SOFTWARE.
+
+    You are solely responsible for determining the appropriateness of using and distributing
+    the software and you assume all risks associated with its use, including but not limited
+    to the risks and costs of program errors, compliance with applicable laws, damage to or
+    loss of data, programs or equipment, and the unavailability or interruption of
+    operation. This software is not intended to be used in any situation where a failure
+    could cause risk of injury or damage to property. The software developed by NIST
+    employees is not subject to copyright protection within the United States.
+
+The optional SP 800-22 path calls NistRng by Luca Pasqualini,
+https://github.com/InsaneMonster/NistRng, BSD 3-Clause. It is an optional dependency and
+no part of it is copied into this repository.
